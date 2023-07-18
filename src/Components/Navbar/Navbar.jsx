@@ -1,27 +1,22 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
-//   const { user, LogOut } = useContext(AuthContext);
+  const { user, LogOut } = useContext(AuthContext);
   const handleLogout = () => {
-//     LogOut()
-//     .then(()=>{
-//        localStorage.removeItem('kids-zone-access-token')
-//     })
-//     .catch(error =>{
-//       console.log(error)
-//     })
+    LogOut()
+    .then(()=>{
+       
+    })
+    .catch(error =>{
+      console.log(error)
+    })
   }
   const navItem = <>
     <li> <Link to='/'> Home </Link> </li>
-    <li> <Link to='/blogs'>Blog </Link> </li>
-    <li> <Link to='/login'>Log In </Link> </li>
 
-    {/* {user &&
-      <button><li > <Link to='/myvehicles'>My Toys </Link> </li></button>
-    }
-    {user &&
-      <li> <Link to='/addvehicles'>Add Toys </Link> </li>
-    }
+
 
     {user ?
       <li onClick={handleLogout}> <Link>LogOut</Link> </li> : <li> <Link to='/login'>Login</Link> </li>}
@@ -31,7 +26,7 @@ const Navbar = () => {
           <img title={user?.displayName} src={user?.photoURL} />
         </div>
       </div>
-    } */}
+    }
 
   </>
   return (
